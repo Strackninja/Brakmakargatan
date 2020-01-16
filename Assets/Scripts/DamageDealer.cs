@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DamageDealer : MonoBehaviour
 {
-
+    //Hur mycket damage karaktärerna dealar
     [SerializeField]
     float damageAmount = 10;
 

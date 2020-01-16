@@ -16,6 +16,7 @@ public class PlayerBasicDamage : MonoBehaviour
 
 
     [SerializeField]
+    //Max HP för karaktärerna, eftersom att damagen är 10 dör dem efter 10 slag.
     float maxHealth = 100;
 
     float health;
@@ -24,6 +25,7 @@ public class PlayerBasicDamage : MonoBehaviour
     {
         set
         {
+            //Health är antingen en siffra 
             health = Mathf.Clamp(value, 0, maxHealth);
             
             foreach(ProgressHandler handler in healthMonitors)
@@ -72,7 +74,7 @@ public class PlayerBasicDamage : MonoBehaviour
         }
 
     }
-
+    //En metod som kollar ifall någon av karaktärerna är döda. Ifall 
     private void CheckDeath()
     {
         if (Health <= 0)

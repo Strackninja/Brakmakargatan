@@ -35,7 +35,7 @@ public class PlayerBasicMovement : MonoBehaviour
     {
         get; private set;
     }
-
+    //Ifall spelaren håller in space kommer boolen att vara true
     bool hasReleasedJumpButton = true;
 
     void Start()
@@ -81,6 +81,7 @@ public class PlayerBasicMovement : MonoBehaviour
         animator.SetFloat("xmove", horizontalAxisValue);
     }
 
+    //Metoden för att hoppa, ifall spelaren är på marken och håller in space kommer gubben att hoppa, annars kommer inget att ske. 
     private void CheckJump(float verticalAxisValue)
     {
 
@@ -99,6 +100,7 @@ public class PlayerBasicMovement : MonoBehaviour
         animator.SetBool("onground", grounded);
     }
 
+    //Denna metod gör att spelarna alltid är vända mot varanda
     public void CheckMirrored(GameObject target)
     {
         bool isOnTheRight = target.transform.position.x < transform.position.x;
@@ -124,7 +126,7 @@ public class PlayerBasicMovement : MonoBehaviour
 
         rb.velocity = newVelocity;
     }
-
+    //Metod som returnerar ett värde (true eller false) beroende på ifall spelaren är på marken eller inte. 
     private bool IsOnGround()
     {
 
